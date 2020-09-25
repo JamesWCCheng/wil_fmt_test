@@ -1,30 +1,27 @@
-﻿#include <iostream>
+﻿#include <Endpointvolume.h>
+#include <Mmdeviceapi.h>
+#include <Objbase.h>
+#include <Wbemidl.h>
 #include <cassert>
+#include <chrono>
+#include <comutil.h>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
 #include <stdlib.h>
-#include <wil/resource.h>
+#include <tchar.h>
+#include <vector>
+#include <wrl/client.h>
+
+#include <windows.h>
+
 using namespace std;
 
-class B
-{
-public:
-    B(){}
-    virtual void X() = 0;
-};
+#pragma comment(lib, "Ole32.lib")
+#pragma comment(lib, "Wbemuuid.lib")
+#pragma comment(lib, "comsuppwd.lib")
 
-class D:public B
-{
-public:
-    D(){ X();}
-    void X() override{}
-};
 int main()
 {
-    int a = 1;
-
-    auto qq = _set_abort_behavior(1, _WRITE_ABORT_MSG);
-    auto qq2 = _set_abort_behavior(0, _WRITE_ABORT_MSG);
-    cout<<INT_MIN - 1;
-    assert(a > 1);
-
     return 0;
 }
